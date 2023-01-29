@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Verdana, sans-serif;
+    color: beige;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul /*a bootstrap ol, ul formázását írja felül*/ {
+    padding: 0;
+}
+
+
+body {
+    background-image: url("kepek/black.png");
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgb(211, 211, 211);
+
+    display: grid;
+    grid-template-areas:
+    "h"
+    "n"
+    "a"
+    "f"
+    ;
+}
+
+header {
+    grid-area: h;
+    background-image: url("kepek/game.jpg");
+    height: 300px;
+    background-size: cover;
+}
+
+nav {
+    grid-area: n;
+    height: 50px;
+    background-color: #333;
+}
+
+nav ul {
+    height: inherit;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+}
+
+nav ul li:hover {
+    background-color: #fe8000;
+}
+
+
+nav ul li a {
+    color: beige;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article {
+    grid-area: a;
+    padding: 15px;
+}
+
+article *, footer * {
+    color: #000
+}
+
+article p {
+    text-align: justify;
+    font-size: 10px;
+    padding: 15px 0;
+}
+
+article h1 {
+    font-size: 15px;
+    padding: 15px 0;
+}
+
+article img {
+    float: right;
+    max-width: 100%;
+    height: 300px;
+    margin-left: 15px
+}
+
+article ul {
+    list-style-type: square;
+    padding: 0 15px;
+}
+
+
+footer {
+    grid-area: f;
+    background-color: #fe8000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 15px;
+}
+
+
+
+
+@media screen and (max-width: 700px){
+    nav {
+        height: auto;
+    }
+
+    nav ul {
+        grid-template-columns: 100%;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li  {
+        border: 0;
+    }
+
+    article img {
+        float: none;
+    }
+}
